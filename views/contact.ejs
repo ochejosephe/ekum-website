@@ -1,0 +1,83 @@
+<%- include('partials/header', { currentPage: 'contact', title: 'Contact | Ekum Electricals' }) %>
+
+<main>
+  <section class="page-hero small-hero">
+    <div class="hero-overlay"></div>
+    <div class="container page-hero-inner">
+      <div class="section-tag">05 / CONTACT</div>
+      <h1>Let’s Power Your Next Project.</h1>
+    </div>
+  </section>
+
+  <section class="page-content contact-page">
+    <div class="container contact-layout">
+      <div class="contact-details">
+        <div class="contact-item">
+          <span class="icon">📍</span>
+          <div>
+            <h3>Location</h3>
+            <p>Abuja, Nigeria</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="icon">📞</span>
+          <div>
+            <h3>Phone</h3>
+            <p><a href="tel:+2348036190484">08036190484</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="icon">✉️</span>
+          <div>
+            <h3>Email</h3>
+            <p><a href="mailto:ajehaustine07@gmail.com">ajehaustine07@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="icon">🕒</span>
+          <div>
+            <h3>Business Hours</h3>
+            <p>Monday - Friday: 08:00 - 18:00<br />Saturday: 09:00 - 15:00<br />Sunday: By appointment</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-panel">
+        <h2>Send a Service Request</h2>
+
+        <% if (typeof success !== 'undefined' && success) { %>
+          <div class="notice success">Your request has been sent successfully. We will contact you soon.</div>
+        <% } %>
+
+        <% if (typeof error !== 'undefined' && error) { %>
+          <div class="notice error"><%= error %></div>
+        <% } %>
+
+        <form action="/contact" method="POST" class="inquiry-form">
+          <div class="input-row">
+            <input type="text" name="fullName" placeholder="Full Name" required />
+            <input type="tel" name="phone" placeholder="Phone Number" required />
+          </div>
+
+          <div class="input-row">
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="text" name="service" placeholder="Service Required" required />
+          </div>
+
+          <div class="input-row">
+            <input type="text" name="propertyType" placeholder="Property Type" />
+            <input type="date" name="preferredDate" />
+          </div>
+
+          <textarea name="message" rows="5" placeholder="Message" required></textarea>
+          <button type="submit" class="primary-button submit-button">Send Service Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

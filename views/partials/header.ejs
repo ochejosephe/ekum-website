@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= typeof title !== 'undefined' ? title : 'Ekum Electricals' %></title>
+    <meta
+      name="description"
+      content="Ekum Electricals provides professional electrical installation, maintenance and engineering solutions across Abuja."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container topbar">
+        <a href="/" class="brand" aria-label="Ekum Electricals home">
+          <span class="brand-mark">EKUM</span>
+          <span class="brand-name">ELECTRICALS</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="/" class="<%= currentPage === 'index' ? 'active' : '' %>">Home</a>
+          <a href="/about" class="<%= currentPage === 'about' ? 'active' : '' %>">About</a>
+          <a href="/services" class="<%= currentPage === 'services' ? 'active' : '' %>">Services</a>
+          <a href="/projects" class="<%= currentPage === 'projects' ? 'active' : '' %>">Projects</a>
+          <a href="/contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contact</a>
+        </nav>
+
+        <a class="header-button" href="/contact">Request a Service</a>
+      </div>
+    </header>
