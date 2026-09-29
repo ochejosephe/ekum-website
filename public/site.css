@@ -626,6 +626,32 @@ textarea::placeholder {
   padding-left: 24px;
 }
 
+.founder-layout {
+  display: grid;
+  width: min(880px, 100%);
+  grid-template-columns: 160px minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+}
+
+.founder-portrait {
+  width: 160px;
+  height: 160px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-neutral-100);
+}
+
+.founder-copy h2 {
+  margin-bottom: 8px;
+}
+
+.founder-role {
+  margin-bottom: 16px;
+  color: var(--color-neutral-700);
+  font-weight: 600;
+}
+
 .site-footer {
   padding-top: 56px;
   background: var(--color-neutral-900);
@@ -775,6 +801,7 @@ textarea::placeholder {
 
   .intro-grid,
   .split-layout,
+  .founder-layout,
   .contact-wrap,
   .contact-layout,
   .feature-grid,
@@ -793,6 +820,12 @@ textarea::placeholder {
     align-items: flex-start;
     flex-direction: column;
     padding: 24px;
+  }
+
+  .founder-layout {
+    justify-items: center;
+    gap: 24px;
+    text-align: center;
   }
 
   .submit-btn,
