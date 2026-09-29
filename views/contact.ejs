@@ -1,6 +1,6 @@
 <%- include('partials/header', { currentPage: 'contact', title: 'Contact | Ekum Electricals' }) %>
 
-<main>
+<main id="main-content">
   <section class="page-hero small-hero">
     <div class="hero-overlay"></div>
     <div class="container page-hero-inner">
@@ -13,15 +13,15 @@
     <div class="container contact-layout">
       <div class="contact-details">
         <div class="contact-item">
-          <span class="icon">📍</span>
+          <span class="icon" aria-hidden="true">📍</span>
           <div>
-            <h3>Location</h3>
-            <p>Abuja, Nigeria</p>
+            <h3>Service Address</h3>
+            <p>Plot 42731, Lokotiye Zone D1, Casdastral Zone CO5, Karishi Development Area, Nasarawa State.</p>
           </div>
         </div>
 
         <div class="contact-item">
-          <span class="icon">📞</span>
+          <span class="icon" aria-hidden="true">📞</span>
           <div>
             <h3>Phone</h3>
             <p><a href="tel:+2348036190484">08036190484</a></p>
@@ -29,7 +29,7 @@
         </div>
 
         <div class="contact-item">
-          <span class="icon">✉️</span>
+          <span class="icon" aria-hidden="true">✉️</span>
           <div>
             <h3>Email</h3>
             <p><a href="mailto:ajehaustine07@gmail.com">ajehaustine07@gmail.com</a></p>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="contact-item">
-          <span class="icon">🕒</span>
+          <span class="icon" aria-hidden="true">🕒</span>
           <div>
             <h3>Business Hours</h3>
             <p>Monday - Friday: 08:00 - 18:00<br />Saturday: 09:00 - 15:00<br />Sunday: By appointment</p>
@@ -58,21 +58,21 @@
 
         <form action="/contact" method="POST" class="inquiry-form">
           <div class="input-row">
-            <input type="text" name="fullName" placeholder="Full Name" required />
-            <input type="tel" name="phone" placeholder="Phone Number" required />
+            <input type="text" name="fullName" aria-label="Full name" placeholder="Full Name" autocomplete="name" required />
+            <input type="tel" name="phone" aria-label="Phone number" placeholder="Phone Number" autocomplete="tel" required />
           </div>
 
           <div class="input-row">
-            <input type="email" name="email" placeholder="Email" required />
-            <input type="text" name="service" placeholder="Service Required" required />
+            <input type="email" name="email" aria-label="Email address" placeholder="Email" autocomplete="email" required />
+            <input type="text" name="service" aria-label="Service required" placeholder="Service Required" required />
           </div>
 
           <div class="input-row">
-            <input type="text" name="propertyType" placeholder="Property Type" />
-            <input type="date" name="preferredDate" />
+            <input type="text" name="propertyType" aria-label="Property type" placeholder="Property Type" />
+            <input type="date" name="preferredDate" aria-label="Preferred date" />
           </div>
 
-          <textarea name="message" rows="5" placeholder="Message" required></textarea>
+          <textarea name="message" aria-label="Message" rows="5" placeholder="Message" required></textarea>
           <button type="submit" class="primary-button submit-button">Send Service Request</button>
         </form>
       </div>

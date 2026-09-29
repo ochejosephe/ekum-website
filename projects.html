@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | EKUM Electricals</title>
   <meta name="description" content="Selected electrical projects and workmanship by EKUM Electricals in Abuja." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="Style.css" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EKUM Electricals" />
+  <meta property="og:title" content="Projects | EKUM Electricals" />
+  <meta property="og:description" content="Selected electrical projects and workmanship by EKUM Electricals." />
+  <link rel="icon" href="public/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="public/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="stylesheet" href="public/site.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="brand" aria-label="EKUM Electricals home">
@@ -22,7 +28,7 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
+        <a href="projects.html" aria-current="page">Projects</a>
         <a href="contact.html">Contact</a>
       </nav>
 
@@ -30,7 +36,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="page-hero">
       <div class="hero-overlay"></div>
       <div class="container hero-content page-content-wrap">
@@ -40,10 +46,11 @@
     </section>
 
     <section class="section project-section">
+      <h2 class="visually-hidden">Electrical project gallery</h2>
       <div class="container">
         <div class="project-grid detail-grid">
           <article class="project-card">
-            <div class="project-image image-1"></div>
+            <div class="project-image image-1"><picture><source type="image/avif" srcset="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?fit=crop&amp;w=480&amp;q=70&amp;fm=avif 480w, https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?fit=crop&amp;w=768&amp;q=70&amp;fm=avif 768w, https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?fit=crop&amp;w=1200&amp;q=70&amp;fm=avif 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" /><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?fit=crop&amp;w=768&amp;q=70&amp;fm=webp" srcset="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?fit=crop&amp;w=480&amp;q=70&amp;fm=webp 480w, https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?fit=crop&amp;w=768&amp;q=70&amp;fm=webp 768w, https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?fit=crop&amp;w=1200&amp;q=70&amp;fm=webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="800" loading="lazy" decoding="async" alt="Electrician inspecting wiring in a residential property" /></picture></div>
             <div class="project-info">
               <span>Residential</span>
               <h3>Residential Electrical</h3>
@@ -51,7 +58,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image image-2"></div>
+            <div class="project-image image-2"><picture><source type="image/avif" srcset="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?fit=crop&amp;w=480&amp;q=70&amp;fm=avif 480w, https://images.unsplash.com/photo-1558618666-fcd25c85cd64?fit=crop&amp;w=768&amp;q=70&amp;fm=avif 768w, https://images.unsplash.com/photo-1558618666-fcd25c85cd64?fit=crop&amp;w=1200&amp;q=70&amp;fm=avif 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" /><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?fit=crop&amp;w=768&amp;q=70&amp;fm=webp" srcset="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?fit=crop&amp;w=480&amp;q=70&amp;fm=webp 480w, https://images.unsplash.com/photo-1558618666-fcd25c85cd64?fit=crop&amp;w=768&amp;q=70&amp;fm=webp 768w, https://images.unsplash.com/photo-1558618666-fcd25c85cd64?fit=crop&amp;w=1200&amp;q=70&amp;fm=webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="800" loading="lazy" decoding="async" alt="Electrical service work in a commercial building" /></picture></div>
             <div class="project-info">
               <span>Commercial</span>
               <h3>Commercial Electrical</h3>
@@ -59,7 +66,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image image-3"></div>
+            <div class="project-image image-3"><picture><source type="image/avif" srcset="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?fit=crop&amp;w=480&amp;q=70&amp;fm=avif 480w, https://images.unsplash.com/photo-1507473885765-e6ed057f782c?fit=crop&amp;w=768&amp;q=70&amp;fm=avif 768w, https://images.unsplash.com/photo-1507473885765-e6ed057f782c?fit=crop&amp;w=1200&amp;q=70&amp;fm=avif 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" /><img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?fit=crop&amp;w=768&amp;q=70&amp;fm=webp" srcset="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?fit=crop&amp;w=480&amp;q=70&amp;fm=webp 480w, https://images.unsplash.com/photo-1507473885765-e6ed057f782c?fit=crop&amp;w=768&amp;q=70&amp;fm=webp 768w, https://images.unsplash.com/photo-1507473885765-e6ed057f782c?fit=crop&amp;w=1200&amp;q=70&amp;fm=webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="800" loading="lazy" decoding="async" alt="Modern lighting installed in an interior space" /></picture></div>
             <div class="project-info">
               <span>Lighting</span>
               <h3>Lighting Systems</h3>
@@ -67,7 +74,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image image-4"></div>
+            <div class="project-image image-4"><picture><source type="image/avif" srcset="https://images.unsplash.com/photo-1497366811353-6870744d04b2?fit=crop&amp;w=480&amp;q=70&amp;fm=avif 480w, https://images.unsplash.com/photo-1497366811353-6870744d04b2?fit=crop&amp;w=768&amp;q=70&amp;fm=avif 768w, https://images.unsplash.com/photo-1497366811353-6870744d04b2?fit=crop&amp;w=1200&amp;q=70&amp;fm=avif 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" /><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?fit=crop&amp;w=768&amp;q=70&amp;fm=webp" srcset="https://images.unsplash.com/photo-1497366811353-6870744d04b2?fit=crop&amp;w=480&amp;q=70&amp;fm=webp 480w, https://images.unsplash.com/photo-1497366811353-6870744d04b2?fit=crop&amp;w=768&amp;q=70&amp;fm=webp 768w, https://images.unsplash.com/photo-1497366811353-6870744d04b2?fit=crop&amp;w=1200&amp;q=70&amp;fm=webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="800" loading="lazy" decoding="async" alt="Commercial workspace with organized electrical systems" /></picture></div>
             <div class="project-info">
               <span>Panels</span>
               <h3>Electrical Panels</h3>
@@ -75,7 +82,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image image-5"></div>
+            <div class="project-image image-5"><picture><source type="image/avif" srcset="https://images.unsplash.com/photo-1504307651254-35680f356dfd?fit=crop&amp;w=480&amp;q=70&amp;fm=avif 480w, https://images.unsplash.com/photo-1504307651254-35680f356dfd?fit=crop&amp;w=768&amp;q=70&amp;fm=avif 768w, https://images.unsplash.com/photo-1504307651254-35680f356dfd?fit=crop&amp;w=1200&amp;q=70&amp;fm=avif 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" /><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?fit=crop&amp;w=768&amp;q=70&amp;fm=webp" srcset="https://images.unsplash.com/photo-1504307651254-35680f356dfd?fit=crop&amp;w=480&amp;q=70&amp;fm=webp 480w, https://images.unsplash.com/photo-1504307651254-35680f356dfd?fit=crop&amp;w=768&amp;q=70&amp;fm=webp 768w, https://images.unsplash.com/photo-1504307651254-35680f356dfd?fit=crop&amp;w=1200&amp;q=70&amp;fm=webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="800" loading="lazy" decoding="async" alt="Electrician completing wiring and installation work" /></picture></div>
             <div class="project-info">
               <span>Installation</span>
               <h3>Wiring &amp; Installation</h3>
@@ -83,7 +90,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image image-6"></div>
+            <div class="project-image image-6"><picture><source type="image/avif" srcset="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?fit=crop&amp;w=480&amp;q=70&amp;fm=avif 480w, https://images.unsplash.com/photo-1621905252507-b35492cc74b4?fit=crop&amp;w=768&amp;q=70&amp;fm=avif 768w, https://images.unsplash.com/photo-1621905252507-b35492cc74b4?fit=crop&amp;w=1200&amp;q=70&amp;fm=avif 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" /><img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?fit=crop&amp;w=768&amp;q=70&amp;fm=webp" srcset="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?fit=crop&amp;w=480&amp;q=70&amp;fm=webp 480w, https://images.unsplash.com/photo-1621905252507-b35492cc74b4?fit=crop&amp;w=768&amp;q=70&amp;fm=webp 768w, https://images.unsplash.com/photo-1621905252507-b35492cc74b4?fit=crop&amp;w=1200&amp;q=70&amp;fm=webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="800" loading="lazy" decoding="async" alt="Electrical maintenance and repair work" /></picture></div>
             <div class="project-info">
               <span>Maintenance</span>
               <h3>Maintenance Work</h3>
@@ -123,7 +130,7 @@
         <ul class="footer-links">
           <li><a href="tel:+2348036190484">08036190484</a></li>
           <li><a href="mailto:ajehaustine07@gmail.com">ajehaustine07@gmail.com</a></li>
-          <li>Abuja, Nigeria</li>
+          <li>Plot 42731, Lokotiye Zone D1, Casdastral Zone CO5, Karishi Development Area, Nasarawa State.</li>
         </ul>
       </div>
     </div>

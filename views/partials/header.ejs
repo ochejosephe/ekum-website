@@ -4,32 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= typeof title !== 'undefined' ? title : 'Ekum Electricals' %></title>
-    <meta
-      name="description"
-      content="Ekum Electricals provides professional electrical installation, maintenance and engineering solutions across Abuja."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/styles.css" />
+    <% const descriptions = {
+      index: 'Reliable electrical installation, maintenance, repair and engineering services for homes and businesses in Nigeria.',
+      about: 'Meet EKUM Electricals founder AJEH AUGUSTINE ENENCHE and learn about our electrical engineering services.',
+      services: 'Electrical installation, maintenance, rewiring, lighting, safety inspection and generator services from EKUM Electricals.',
+      projects: 'Explore electrical installation, lighting and maintenance work by EKUM Electricals.',
+      contact: 'Request electrical installation, maintenance and repair services from EKUM Electricals.'
+    }; %>
+    <meta name="description" content="<%= descriptions[currentPage] %>" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="EKUM Electricals" />
+    <meta property="og:title" content="<%= title %>" />
+    <meta property="og:description" content="<%= descriptions[currentPage] %>" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/site.css" />
+    <% if (currentPage === 'index' || currentPage === 'projects') { %>
+      <link rel="preconnect" href="https://images.unsplash.com" />
+    <% } %>
+    <% if (currentPage === 'index') { %>
+      <link rel="prefetch" href="/services" as="document" />
+      <link rel="preload" as="image" type="image/avif" href="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=960&q=75&fm=avif" imagesrcset="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=640&q=75&fm=avif 640w, https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=960&q=75&fm=avif 960w, https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=75&fm=avif 1600w" imagesizes="100vw" />
+    <% } %>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <div class="container topbar">
-        <a href="/" class="brand" aria-label="Ekum Electricals home">
+          <a href="/" class="brand" aria-label="Ekum Electricals home">
           <span class="brand-mark">EKUM</span>
           <span class="brand-name">ELECTRICALS</span>
         </a>
 
         <nav class="main-nav" aria-label="Main navigation">
-          <a href="/" class="<%= currentPage === 'index' ? 'active' : '' %>">Home</a>
-          <a href="/about" class="<%= currentPage === 'about' ? 'active' : '' %>">About</a>
-          <a href="/services" class="<%= currentPage === 'services' ? 'active' : '' %>">Services</a>
-          <a href="/projects" class="<%= currentPage === 'projects' ? 'active' : '' %>">Projects</a>
-          <a href="/contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contact</a>
+          <a href="/" class="<%= currentPage === 'index' ? 'active' : '' %>" <%= currentPage === 'index' ? 'aria-current="page"' : '' %>>Home</a>
+          <a href="/about" class="<%= currentPage === 'about' ? 'active' : '' %>" <%= currentPage === 'about' ? 'aria-current="page"' : '' %>>About</a>
+          <a href="/services" class="<%= currentPage === 'services' ? 'active' : '' %>" <%= currentPage === 'services' ? 'aria-current="page"' : '' %>>Services</a>
+          <a href="/projects" class="<%= currentPage === 'projects' ? 'active' : '' %>" <%= currentPage === 'projects' ? 'aria-current="page"' : '' %>>Projects</a>
+          <a href="/contact" class="<%= currentPage === 'contact' ? 'active' : '' %>" <%= currentPage === 'contact' ? 'aria-current="page"' : '' %>>Contact</a>
         </nav>
 
         <a class="header-button" href="/contact">Request a Service</a>

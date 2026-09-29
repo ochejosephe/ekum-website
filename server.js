@@ -15,11 +15,25 @@ if (!fs.existsSync(dataDir)) {
 }
 
 const db = new sqlite3.Database(dbPath);
+app.disable('x-powered-by');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('view cache', process.env.NODE_ENV === 'production');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use((req, res, next) => {
+  res.set({
+    'Content-Security-Policy': "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' https://images.unsplash.com",
+    'Referrer-Policy': 'strict-origin-when-cross-origin',
+    'X-Content-Type-Options': 'nosniff',
+  });
+  next();
+});
+app.use(express.static(path.join(__dirname, 'public'), {
+  maxAge: '1d',
+  etag: true,
+  lastModified: true,
+}));
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -70,6 +84,45 @@ function renderPage(res, view, options = {}) {
     ...options,
   });
 }
+
+function getSiteOrigin(req) {
+  try {
+    const siteUrl = new URL(process.env.SITE_URL || `${req.protocol}://${req.get('host')}`);
+    if (!['http:', 'https:'].includes(siteUrl.protocol) || siteUrl.username || siteUrl.password) {
+      return null;
+    }
+    return siteUrl.origin;
+  } catch {
+    return null;
+  }
+}
+
+app.get('/robots.txt', (req, res) => {
+  const siteOrigin = getSiteOrigin(req);
+  if (!siteOrigin) {
+    return res.sendStatus(500);
+  }
+
+  return res
+    .type('text/plain')
+    .set('Cache-Control', 'public, max-age=86400')
+    .send(`User-agent: *\nAllow: /\n\nSitemap: ${siteOrigin}/sitemap.xml\n`);
+});
+
+app.get('/sitemap.xml', (req, res) => {
+  const siteOrigin = getSiteOrigin(req);
+  if (!siteOrigin) {
+    return res.sendStatus(500);
+  }
+
+  const routes = ['/', '/about', '/services', '/projects', '/contact'];
+  const entries = routes.map((route) => `<url><loc>${siteOrigin}${route}</loc></url>`).join('');
+
+  return res
+    .type('application/xml')
+    .set('Cache-Control', 'public, max-age=86400')
+    .send(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${entries}</urlset>`);
+});
 
 app.get('/', (req, res) => {
   renderPage(res, 'index', { currentPage: 'index', title: 'Ekum Electricals | Professional Electrical Solutions' });
@@ -158,5 +211,5 @@ app.post('/contact', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Ekum Electricals app is running on http://localhost:${PORT}`);
+  process.stdout.write(`Ekum Electricals app listening on port ${PORT}\n`);
 });
